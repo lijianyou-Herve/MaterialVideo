@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".ui.home.MainActivity"
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_community"
+            android:icon="@drawable/ic_menu_community"
+            android:title="@string/nav_community"/>
+        <item
+            android:id="@+id/nav_video"
+            android:icon="@drawable/ic_menu_video"
+            android:title="@string/nav_video"/>
+
+        <item
+            android:id="@+id/nav_workcollet"
+            android:icon="@drawable/ic_menu_workcollet"
+            android:title="@string/nav_workcollet"/>
+
+        <item
+            android:id="@+id/nav_reward"
+            android:icon="@drawable/ic_menu_reward"
+            android:title="@string/nav_reward"/>
+        <item
+            android:id="@+id/nav_vip"
+            android:icon="@drawable/ic_menu_vip"
+            android:title="@string/nav_vip"/>
+        <item
+            android:id="@+id/nav_bbs"
+            android:icon="@drawable/ic_menu_bbs"
+            android:title="@string/nav_bbs"/>
+        <item
+            android:id="@+id/nav_set"
+            android:icon="@drawable/ic_menu_set"
+            android:title="@string/nav_set"/>
+
+        >
+    </group>
+
+</menu>

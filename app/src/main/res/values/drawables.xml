@@ -1,0 +1,9 @@
+<resources>
+    <item name="ic_menu_community" type="drawable">@mipmap/menu_community_touch</item>
+    <item name="ic_menu_video" type="drawable">@mipmap/menu_video_touch</item>
+    <item name="ic_menu_reward" type="drawable">@mipmap/menu_reward_touch</item>
+    <item name="ic_menu_bbs" type="drawable">@mipmap/menu_bbs_touch</item>
+    <item name="ic_menu_workcollet" type="drawable">@mipmap/menu_purse_touch</item>
+    <item name="ic_menu_set" type="drawable">@mipmap/menu_set_touch</item>
+    <item name="ic_menu_vip" type="drawable">@mipmap/menu_vip_touch</item>
+</resources>
