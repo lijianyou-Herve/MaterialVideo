@@ -5,10 +5,13 @@
     tools:context="com.example.herve.materialvideo.ui.film.fragments.BlankFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.AppCompatButton
         android:id="@+id/tv_blank_fragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:theme="@style/RedButton"
+        />
 
 </FrameLayout>
