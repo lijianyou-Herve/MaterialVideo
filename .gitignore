@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gradle/
+.idea/workspace.xml
+.idea/AndroidHoloColors_AppTheme.zip
+.idea/fileTemplates/
+app/src/androidTest/
+app/src/test/

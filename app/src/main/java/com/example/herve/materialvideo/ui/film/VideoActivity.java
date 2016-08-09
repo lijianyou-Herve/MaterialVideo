@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.herve.materialvideo.R;
 import com.example.herve.materialvideo.base.BaseActivity;
+import com.example.herve.materialvideo.data.bean.preson.Person;
 import com.example.herve.materialvideo.ui.film.adapter.FilmPageFragmentAdapter;
 import com.example.herve.materialvideo.ui.film.fragments.BlankFragment;
 import com.example.herve.materialvideo.ui.film.fragments.BlankThreeFragment;
@@ -29,6 +30,8 @@ import com.example.herve.materialvideo.ui.film.presenter.DataBean;
 import com.example.herve.materialvideo.ui.film.presenter.ItemBean;
 import com.example.herve.materialvideo.ui.film.presenter.VideoContract;
 import com.example.herve.materialvideo.ui.film.presenter.VideoPresenter;
+import com.example.herve.materialvideo.utils.fastjson.FastJsonParser;
+import com.example.herve.materialvideo.utils.fastjson.TestDataManager;
 import com.example.herve.materialvideo.widget.imageloader.ijkplayer.widget.media.IjkVideoView;
 
 import java.util.ArrayList;
@@ -117,7 +120,7 @@ public class VideoActivity extends BaseActivity implements VideoContract.Present
     }
 
     private void initData() {
-        collapsingToolbar.setVisibility(View.VISIBLE);
+        collapsingToolbar.setTitle("视频详情");
         url = getIntent().getStringExtra("url");
         ijkPlayer.changeAspectRaito(0);
         Glide.with(ivImage.getContext())
@@ -131,7 +134,15 @@ public class VideoActivity extends BaseActivity implements VideoContract.Present
 
     private void initUI() {
 
-
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
         IjkMediaPlayer.loadLibrariesOnce(null);
         IjkMediaPlayer.native_profileBegin("libijkplayer.so");
         ijkPlayer.setBackgroundColor(Color.parseColor("#ca3f3f"));
@@ -222,6 +233,18 @@ public class VideoActivity extends BaseActivity implements VideoContract.Present
         viewpager.setAdapter(filmPageFragmentAdapter);
         tabLayout.setupWithViewPager(viewpager);
         videoStart();
+
+
+        Person person = TestDataManager.newPerson();
+        Log.i(TAG, "initData: person=" + person.toString());
+
+        String json = FastJsonParser.getInstance().toJson(person);
+
+        Log.i(TAG, "initData: json=" + json);
+        Person person2 = FastJsonParser.getInstance().fromJson(json, Person.class);
+
+        Log.i(TAG, "initData: person=" + person2.toString());
+
 
     }
 

@@ -27,7 +27,7 @@ public class FastJsonParser implements IJsonParser {
         }
     }
 
-    public FastJsonParser getInstance() {
+    public static  FastJsonParser getInstance() {
 
         return Init.fastJsonParser;
     }
