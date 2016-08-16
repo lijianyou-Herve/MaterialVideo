@@ -23,13 +23,15 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
+    /*butterknife*/
     apt 'com.jakewharton:butterknife-compiler:8.1.0'
+    compile 'com.jakewharton:butterknife:8.1.0'
     compile 'com.android.support:appcompat-v7:24.1.1'
     compile 'com.android.support:design:24.1.1'
-    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+//    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.zhousf.lib:okhttp3:1.2.9'
 //    compile 'com.alibaba:fastjson:1.2.12.android'
     compile 'com.alibaba:fastjson:1.1.52.android'
-    compile 'com.jakewharton:butterknife:8.1.0'
     compile 'com.android.support:cardview-v7:24.1.1'
     compile 'com.android.support:support-v4:24.1.1'
     compile 'com.github.bumptech.glide:glide:3.7.0'
@@ -37,7 +39,11 @@ dependencies {
     /*ijkplayer*/
     compile 'tv.danmaku.ijk.media:ijkplayer-java:0.6.0'
     compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.6.0'
-
+    // ExoPlayer as IMediaPlayer: optional, experimental
+    compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.6.0'
+//    compile 'tv.danmaku.ijk.media:ijkplayer-x86:0.6.0'
+//    compile 'tv.danmaku.ijk.media:ijkplayer-x86_64:0.6.0'
+    /*leakcanary 内存泄漏检测工具*/
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'

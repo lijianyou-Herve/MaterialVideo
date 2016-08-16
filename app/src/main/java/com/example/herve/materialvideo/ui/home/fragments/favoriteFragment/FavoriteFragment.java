@@ -7,12 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.herve.materialvideo.R;
-import com.example.herve.materialvideo.ui.home.fragments.baseHomeFragment.BackHandledFragment;
+import com.example.herve.materialvideo.base.BaseFragment;
 
 /**
  * Created by Herve on 2016/6/19.
  */
-public class FavoriteFragment extends BackHandledFragment {
+public class FavoriteFragment extends BaseFragment {
 
     private String TAG = getClass().getSimpleName();
 
@@ -25,14 +25,5 @@ public class FavoriteFragment extends BackHandledFragment {
         return view;
     }
 
-    @Override
-    public String getTagText() {
-        return null;
-    }
-
-    @Override
-    public boolean onBackPressed() {
-        return false;
-    }
 
 }

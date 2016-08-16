@@ -71,7 +71,7 @@ public class VideoActivity extends BaseActivity implements VideoContract.Present
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_video);
         ButterKnife.bind(this);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_USER);
 
@@ -122,6 +122,7 @@ public class VideoActivity extends BaseActivity implements VideoContract.Present
     private void initData() {
         collapsingToolbar.setTitle("视频详情");
         url = getIntent().getStringExtra("url");
+//        url = "http://bj.bcebos.com/v1/tomato-dev/00000000-0000-0000-0000-000000000000/filmTemplate/0118.mp4";
         ijkPlayer.changeAspectRaito(0);
         Glide.with(ivImage.getContext())
                 .load(R.mipmap.videoimage)
@@ -233,7 +234,6 @@ public class VideoActivity extends BaseActivity implements VideoContract.Present
         viewpager.setAdapter(filmPageFragmentAdapter);
         tabLayout.setupWithViewPager(viewpager);
         videoStart();
-
 
         Person person = TestDataManager.newPerson();
         Log.i(TAG, "initData: person=" + person.toString());

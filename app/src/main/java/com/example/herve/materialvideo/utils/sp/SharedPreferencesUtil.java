@@ -29,7 +29,7 @@ public class SharedPreferencesUtil {
             synchronized (SharedPreferencesUtil.class) {
                 if (uniqueInstance == null) {
                     uniqueInstance = new SharedPreferencesUtil();
-                    saveInfo = context.getSharedPreferences(sh_data_name, Context.MODE_PRIVATE);
+                    saveInfo = context.getApplicationContext().getSharedPreferences(sh_data_name, Context.MODE_PRIVATE);
                     saveEditor = saveInfo.edit();
                 }
             }

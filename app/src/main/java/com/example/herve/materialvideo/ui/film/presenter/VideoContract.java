@@ -20,8 +20,11 @@ public interface VideoContract {
 
     }
 
+
+
     public interface PresenterView extends BasePresenterView<Presenter> {
         void initData(DataBean dataBean);
+
 
         void reFresh();
 

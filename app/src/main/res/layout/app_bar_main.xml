@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     tools:context=".ui.home.HomeActivity">
 
-   <include layout="@layout/include_toolbar"></include>
+     <include layout="@layout/include_toolbar"></include>
 
     <FrameLayout
         android:id="@+id/frame_content"

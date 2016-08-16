@@ -37,6 +37,7 @@ import android.widget.MediaController;
 import android.widget.TableLayout;
 
 import com.example.herve.materialvideo.R;
+import com.example.herve.materialvideo.application.AppLication;
 import com.example.herve.materialvideo.widget.imageloader.ijkplayer.services.MediaPlayerService;
 import com.example.herve.materialvideo.widget.imageloader.ijkplayer.widget.Settings;
 
@@ -46,6 +47,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+import tv.danmaku.ijk.media.exo.IjkExoMediaPlayer;
 import tv.danmaku.ijk.media.player.AndroidMediaPlayer;
 import tv.danmaku.ijk.media.player.IMediaPlayer;
 import tv.danmaku.ijk.media.player.IjkMediaPlayer;
@@ -550,7 +552,7 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
     private IMediaPlayer.OnBufferingUpdateListener mBufferingUpdateListener =
             new IMediaPlayer.OnBufferingUpdateListener() {
                 public void onBufferingUpdate(IMediaPlayer mp, int percent) {
-                    Log.e(TAG, "onBufferingUpdate:percent= "+percent );
+                    Log.e(TAG, "onBufferingUpdate:percent= " + percent);
                     mCurrentBufferPercentage = percent;
                 }
             };
@@ -974,8 +976,8 @@ public class IjkVideoView extends FrameLayout implements MediaController.MediaPl
         switch (playerType) {
             case Settings.PV_PLAYER__IjkExoMediaPlayer: {
                 Log.i(TAG, "createPlayer:AAAAAAAAA EXOplayer");
-                AndroidMediaPlayer androidMediaPlayer = new AndroidMediaPlayer();
-                mediaPlayer = androidMediaPlayer;
+                IjkExoMediaPlayer exoMediaPlayer = new IjkExoMediaPlayer(AppLication.getContext());
+                mediaPlayer = exoMediaPlayer;
             }
             break;
             case Settings.PV_PLAYER__AndroidMediaPlayer: {

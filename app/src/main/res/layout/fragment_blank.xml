@@ -11,7 +11,7 @@
         android:layout_height="100dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:theme="@style/RedButton"
+        tools:theme="@style/RedButton"
         />
 
 </FrameLayout>

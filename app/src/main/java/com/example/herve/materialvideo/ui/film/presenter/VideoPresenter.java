@@ -50,7 +50,7 @@ public class VideoPresenter implements VideoContract.Presenter {
                 presenterView.ViewPagerVisibity(View.GONE);
 
             }
-        }, 3000);
+        }, 500);
 
 
     }

@@ -14,3 +14,4 @@ public abstract class OkHttpResJsonHandler extends OkHttpCallback<JSONObject> {
         return responseToJson(response);
     }
 }
+

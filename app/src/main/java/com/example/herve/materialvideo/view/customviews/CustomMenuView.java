@@ -3,6 +3,7 @@ package com.example.herve.materialvideo.view.customviews;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
@@ -187,6 +188,8 @@ public class CustomMenuView extends LinearLayout {
         layoutAnimationDown = getAnimationControllerDown();
 
     }
+
+
 
     private void initListener() {
 

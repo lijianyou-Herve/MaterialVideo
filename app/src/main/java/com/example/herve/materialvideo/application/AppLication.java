@@ -3,6 +3,9 @@ package com.example.herve.materialvideo.application;
 import android.app.Application;
 import android.content.Context;
 
+import com.okhttplib.OkHttpUtil;
+import com.okhttplib.annotation.CacheLevel;
+import com.okhttplib.annotation.CacheType;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -40,10 +43,30 @@ public class AppLication extends Application {
             "ed2k://|file|FC674B387ED82C76CE619F36B2AD4CF7.mp4|2526378787|FC674B387ED82C76CE619F36B2AD4CF7|h=RB3YAZ7F4PU4NC6GWJ4LQGZDP27AY7C5|/"
     };
 
+    private static Context mContext;
+
+    public static Context getContext() {
+        return mContext;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
+        mContext = this;
         refWatcher = LeakCanary.install(this);
+
+        OkHttpUtil.init(this)
+                .setConnectTimeout(30)//连接超时时间
+                .setWriteTimeout(30)//写超时时间
+                .setReadTimeout(30)//读超时时间
+                .setMaxCacheSize(10 * 1024 * 1024)//缓存空间大小
+                .setCacheLevel(CacheLevel.FIRST_LEVEL)//缓存等级
+                .setCacheType(CacheType.NETWORK_THEN_CACHE)//缓存类型
+                .setShowHttpLog(true)//显示请求日志
+                .setShowLifecycleLog(true)//显示Activity销毁日志
+                .setRetryOnConnectionFailure(false)//失败后不自动重连
+                .setDownloadFileDir("")//文件下载保存目录
+                .build();
     }
 
     public static RefWatcher getRefWatcher(Context context) {

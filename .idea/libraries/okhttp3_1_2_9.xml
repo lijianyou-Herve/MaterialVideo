@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="okhttp3-1.2.9">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.zhousf.lib/okhttp3/1.2.9/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.zhousf.lib/okhttp3/1.2.9/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.zhousf.lib/okhttp3/1.2.9/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zhousf.lib/okhttp3/1.2.9/1694060e721ce55829eb72409e9389e23259942d/okhttp3-1.2.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -24,10 +24,9 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
-        sharedPreferencesUtil = SharedPreferencesUtil.getInstance(this);
+        sharedPreferencesUtil = SharedPreferencesUtil.getInstance(mContext);
         themestyle = sharedPreferencesUtil.getthemeStyles();
 
-        Log.e(TAG, "onCreate: themestyle=" + themestyle);
         if (savedInstanceState == null) {
 //            if (themestyle == 1) {
 //                getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);

@@ -17,13 +17,13 @@ import android.widget.FrameLayout;
 import com.example.herve.materialvideo.R;
 import com.example.herve.materialvideo.base.BaseActivity;
 import com.example.herve.materialvideo.base.BaseFragment;
+import com.example.herve.materialvideo.ui.home.fragments.VIPFragment.VIPFragment;
 import com.example.herve.materialvideo.ui.home.fragments.baseHomeFragment.BackHandledFragment;
 import com.example.herve.materialvideo.ui.home.fragments.bbsFragment.BbsFragment;
 import com.example.herve.materialvideo.ui.home.fragments.favoriteFragment.FavoriteFragment;
-import com.example.herve.materialvideo.ui.home.fragments.filmFragment.FilmFragmen;
+import com.example.herve.materialvideo.ui.home.fragments.filmFragment.FilmFragment;
 import com.example.herve.materialvideo.ui.home.fragments.settingFragment.SettingFragment;
 import com.example.herve.materialvideo.ui.home.fragments.squareListFragment.SquareListFragment;
-import com.example.herve.materialvideo.ui.home.fragments.VIPFragment.VIPFragment;
 import com.example.herve.materialvideo.ui.home.fragments.wealthFragment.WealthFragment;
 import com.example.herve.materialvideo.ui.home.presenter.HomeContract;
 import com.example.herve.materialvideo.ui.home.presenter.HomePresenter;
@@ -47,6 +47,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.Presenter
     DrawerLayout drawerLayout;
     @BindView(R.id.frame_content)
     FrameLayout frameContent;
+
 
     private HomeContract.Presenter presenter;
     private List<BaseFragment> baseFragmentList;
@@ -83,14 +84,16 @@ public class HomeActivity extends BaseActivity implements HomeContract.Presenter
         toolbar.setTitle("");
         toolbar.setLogo(R.mipmap.ic_launcher);
         setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
     }
 
 
     private void initData() {
         baseFragmentList = new ArrayList<>();
-        baseFragmentList.add(new FilmFragmen());
         baseFragmentList.add(new SquareListFragment());
+        baseFragmentList.add(new FilmFragment());
         baseFragmentList.add(new WealthFragment());
         baseFragmentList.add(new FavoriteFragment());
         baseFragmentList.add(new VIPFragment());
